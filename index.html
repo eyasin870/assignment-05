@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    <!-- tailwind+daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <!-- google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- fav icon -->
+     <link rel="shortcut icon" href="./assets/github-logo.png" type="image/x-icon">
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+    <!-- css -->
+    <link rel="" href="style.css">
+</head>
+
+<body class="min-h-screen max-w-md bg-white mx-auto">
+    <section class="py-35 px-5 space-y-10 rounded-2xl shadow-2xl">
+        <div class="flex flex-col justify-center items-center space-y-3">
+            <img class="mx-auto" src="./assets/github-logo.png" alt="">
+            <h2 class="text-2xl font-semibold text-[#1F2937]">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+        <div>
+            <fieldset class="fieldset space-y-2">
+                <label class="label text-[#1F2937] font-bold text-xl">Username</label>
+                <input id="input-user-name" type="text" class="input w-full bg-base-100 py-7 rounded-xl  mb-4" placeholder="Enter Username" />
+                <label class="label text-[#1F2937] font-bold text-xl">Password</label>
+                <input id="input-password" type="password" class="input w-full bg-base-100 py-7 rounded-xl mb-10" placeholder="Enter Password" />
+               
+                <button id="login-btn" class="btn btn-primary text-2xl text-white font-semibold mt-4  py-6 rounded-2xl">Login</button>
+            </fieldset>
+
+        </div>
+        <div class="flex items-center my-4">
+            <div class="flex-1 h-px bg-gray-300"></div>
+            <span class="px-3 text-gray-500">OR</span>
+            <div class="flex-1 h-px bg-gray-300"></div>
+        </div>
+        <div class="flex gap-5 text-center justify-center">
+            <p class="text-red-600 text-xl ">user name: admin</p>
+            <p class="text-red-600 text-xl ">pass: admin123</p>
+        </div>
+
+
+    </section>
+    
+
+  
+
+
+    <script src="./js/index.js"></script>
+
+
+
+</body>
+
+</html>
