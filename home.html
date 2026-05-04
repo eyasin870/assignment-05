@@ -33,12 +33,14 @@
     <link rel="" href="style.css">
 </head>
 
-<body class="bg-gray-50" >
+<body class="bg-gray-50">
     <header>
         <nav class="flex justify-between items-center px-3 py-4 bg-white shadow-xl">
             <!-- left -->
             <div class="left flex-1 flex gap-2 items-center">
-                <div class="w-14"><img src="./assets/github-logo.png" alt=""></div>
+                <div class="w-14">
+                    <img src="./assets/github-logo.png" alt="">
+                </div>
                 <h2 class="text-2xl font-semibold text-[#1F2937]">GitHub Issues Tracker</h2>
 
             </div>
@@ -55,7 +57,8 @@
                     <input type="search" required placeholder="Search issues..." />
                 </label>
                 <div class="">
-                    <button class="btn btn-primary px-5 font-semibold py-3"><i class="fa-solid fa-plus"></i>New Issue</button>
+                    <button class="btn btn-primary px-5 font-semibold py-3"><i class="fa-solid fa-plus"></i>New
+                        Issue</button>
                 </div>
 
             </div>
@@ -64,17 +67,47 @@
     <hr class="border-3 border-gray-400 mb-10">
     <main class="w-10/12 mx-auto mt-10">
         <section class="btn-section  px-4 py-6 shadow-xl bg-white">
-            <button id="tab-all" onclick="switchTab('all')"  class="btn border-2 px-10 py-2 text-gray-500 border-gray-200">All</button>
-            <button id="tab-open" onclick="switchTab('open')" class="btn border-2 px-10 py-2 text-gray-500  border-gray-200">Open</button>
-            <button id="tab-closed" onclick="switchTab('closed')" class="btn border-2 px-10 py-2 text-gray-500  border-gray-200">Closed</button>
+            <button id="tab-all" onclick="switchTab('all')"
+                class="btn border-2 px-10 py-2 text-white border-blue btn-primary">All</button>
+            <button id="tab-open" onclick="switchTab('open')"
+                class="btn border-2 px-10 py-2 text-gray-500  border-gray-200">Open</button>
+            <button id="tab-closed" onclick="switchTab('closed')"
+                class="btn border-2 px-10 py-2 text-gray-500  border-gray-200">Closed</button>
+
+
+        </section>
+        <section id="section-card-details" class="flex justify-between bg-white p-4 my-10">
+            <div class="left flex gap-4 items-center ">
+                <div class="p-2 bg-gray-400 rounded-full">
+                    <img src="./assets/Aperture.png" alt="">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold"><span id="issue-count">0</span> Issues</h2>
+                    <p class="text-gray-500">Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="right flex gap-4">
+                <div id="open-box" class="flex gap-1 items-center justify-center">
+                    <div class="w-2 rounded-full bg-green-900 p-2"></div>
+                    <p> Open</p>
+                </div>
+                <div id="close-box" class="flex gap-1 items-center justify-center">
+                    <div class="w-2 rounded-full bg-red-900 p-2"></div>
+                    <p>Closed</p>
+                </div>
+            </div>
+
+        </section>
+        <section id="all-section-card-container">
+            <section id="all-container" class="grid grid-cols-3 gap-4">
+                
+               
+
+            </section>
            
-
-        </section>
-        <section>
-            
         </section>
 
-        
+
     </main>
     <script src="./js/home.js"></script>
 
