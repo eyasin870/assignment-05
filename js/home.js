@@ -4,6 +4,13 @@ const allContainer = document.getElementById("all-container");
 const issueCount = document.getElementById("issue-count");
 const openBox = document.getElementById("open-box");
 const closeBox = document.getElementById("close-box");
+const modalTitle = document.getElementById("modalTitle");
+const modalStatus = document.getElementById("status");
+const modalAssignee = document.getElementById("assignee");
+const modalPriority = document.getElementById("priority");
+const searchInput = document.getElementById("search-input");
+// const closeBox = document.getElementById("close-box");
+// const closeBox = document.getElementById("close-box");
 
 let allIssues = [];
 
@@ -53,7 +60,7 @@ function renderIssues(issues) {
         div.className = `card bg-white h-cover shadow-2xl p-4 border-t-4 ${borderColor}`;
 
         div.innerHTML = `
-            <div class="space-y-4">
+            <div onclick="modalIssue(${issue.id})" class="space-y-4">
                 <div class="flex justify-between">
                     <img src="${statusImg}">
                     <p class="px-6 py-1 bg-red-200 text-red-800 rounded-full">${issue.priority}</p>
@@ -137,6 +144,38 @@ function switchTab(tab) {
         issueCount.innerText = allContainer.children.length
     }
 }
+async function modalIssue(cardsId){
+    // console.log(cardsId)
+  const res =await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${cardsId}`);
+  const data = await res.json()
+  const cardDetails = data.data
+//   console.log(cardDetails);
+  my_modal_1.showModal()
+  modalTitle.textContent = cardDetails.title
+  
+  modalStatus.textContent = cardDetails.status
+  modalAssignee.textContent = cardDetails.assignee
+ 
+  modalAssignee.textContent = cardDetails.assignee
+  modalPriority.textContent = cardDetails.priority
+ 
+
+
+}
+
+
+searchInput.addEventListener("input", function (e) {
+    const value = e.target.value.toLowerCase();
+
+    const filtered = allIssues.filter(issue =>
+        issue.title.toLowerCase().includes(value) ||
+        issue.description.toLowerCase().includes(value)
+    );
+
+    renderIssues(filtered);
+    issueCount.innerText = filtered.length;
+});
+
 
 
 
