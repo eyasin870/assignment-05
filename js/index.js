@@ -3,7 +3,7 @@ document.getElementById("login-btn").addEventListener("click",()=>{
     const pass = getValueFromInput("input-password");
     if(username === "admin"  && pass === "admin123" ){
         alert("login success")
-        window.location.assign("./home.html")
+        window.location.assign("home.html")
 
 
 
